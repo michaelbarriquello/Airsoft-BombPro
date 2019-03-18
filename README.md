@@ -1,3 +1,5 @@
+Tradução para PT-BR
+
 # Airsoft-BombPro 1.5
 By Ignacio Lillo yinbot -at- gmail 
 http://yin.mainstreamds.com

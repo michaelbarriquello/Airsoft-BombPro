@@ -37,7 +37,7 @@
   char* ARMING_BOMB = "ARMING BOMB";
   char* ENTER_CODE = "Enter Code";
   char* CODE_ERROR = "Code Error!";
-  char* BOMB_ARMED = "BOMB ARMED";
+  char* BOMB_ARMED = "BOMBA ARMADA";
   char* DETONATION_IN = "DETONATION IN";
   char* DISARMING = "DISARMING BOMB" ;
   char* DISARM = "DISARMING";

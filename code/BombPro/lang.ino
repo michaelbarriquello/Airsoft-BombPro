@@ -41,7 +41,7 @@
   char* DETONATION_IN = "DETONATION IN";
   char* DISARMING = "DISARMING BOMB" ;
   char* DISARM = "DISARMING";
-  char* GAME_OVER = " GAME OVER! ";
+  char* GAME_OVER = " FIM DE JOGO! ";
   char* DEFENDERS_WIN = " DEFENDERS WIN ";
                    
   

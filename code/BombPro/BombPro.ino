@@ -1,7 +1,7 @@
 #include <Wire.h> 
 #include <Keypad.h>
-//#include <LiquidCrystal_I2C.h>
-#include <LiquidCrystal.h>
+#include <LiquidCrystal_I2C.h>
+//#include <LiquidCrystal.h>
 /*
  Arduino Bomb Pro
  
@@ -15,8 +15,10 @@
  
  */
 
-//LiquidCrystal_I2C lcd(0x38,16,2);
-LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+LiquidCrystal_I2C lcd(0x3F, 16, 2);
+
+//LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
 const byte ROWS = 4; //four rows
 const byte COLS = 4; //three columns
 char keys[ROWS][COLS] = {
@@ -33,11 +35,8 @@ char keys[ROWS][COLS] = {
     '*','0','#','d'                          }
 };
 
-byte rowPins[ROWS] = {
-  A4, A5, 13, 12}; //connect to the row pinouts of the keypad
-byte colPins[COLS] = {
-  A0, A1, A2, A3
-}; //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = {  A0, A1, A2, A3}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {  9, 10, 11, 12};  //connect to the column pinouts of the keypad
 
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
@@ -62,12 +61,12 @@ char BT_DEFUSER = 'x';   // not implemented
 
 //leds
 
-const int REDLED = 11;
-const int GREENLED = 10;
+const int REDLED = 8;
+const int GREENLED = 7;
 //const int BLUELED = 12;
 //mosfet
 boolean mosfetEnable = false;
-const int mosfet = 9;
+const int mosfet = 6;
 //IS VERY IMPORTANT THAT YOU TEST THIS TIME. BY DEFAULT IS IN 1 SEC. THAT IS NOT TOO MUCH. SO TEST IT!
 const int MOSFET_TIME = 5000;
 
@@ -87,7 +86,7 @@ boolean defuseando;
 boolean cancelando;
 // SOUND TONES
 boolean soundEnable = true;
-int tonepin = 8; // Pin 13 for the sound
+int tonepin = 13; // Pin 13 for the sound
 int tonoPitido = 3000;
 int tonoAlarma1 = 700;
 int tonoAlarma2 = 2600;
@@ -104,8 +103,8 @@ byte team=0; // 0 = neutral, 1 = green team, 2 = red team
 void setup(){
   lcd.begin(16, 2);
   Serial.begin(9600);
-  //  lcd.init();                      // initialize the lcd 
-  //  lcd.backlight();
+  lcd.init();                      // initialize the lcd 
+  lcd.backlight();
   lcd.setCursor(3,0);
   tone(tonepin,2400,30);
   lcd.print("IGNIS ONE");// you can add your team name or someting cool
@@ -329,4 +328,3 @@ void explodeSplash(){
     }  
   } 
 }
-

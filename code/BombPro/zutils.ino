@@ -143,19 +143,19 @@ void printTimeDom(unsigned long aTiempo, boolean showMillis){
 
 void startGameCount(){
   cls();
-  lcd.setCursor(1,0);
-  lcd.print("Ready to Begin");
-  lcd.setCursor(0,1);
-  lcd.print("Push ANY Button");
+  lcd.setCursor(2,0);
+  lcd.print("PARA INICIAR");
+  lcd.setCursor(1,1);
+  lcd.print("QUALQUER BOTAO");
   keypad.waitForKey();//if you press a button game start
 
   cls();
   lcd.setCursor(1,0);
-  lcd.print("Starting Game");
+  lcd.print("INICIANDO JOGO");
   for(int i = 5; i > 0 ; i--){ // START COUNT GAME INIT
     lcd.setCursor(5,1);
     tone(tonepin,2000,100);
-    lcd.print("IN ");
+    lcd.print("EM: ");
     lcd.print(i);
     delay(1000);
   }
@@ -189,5 +189,3 @@ void activateMosfet(){
   digitalWrite(mosfet, LOW);
 
 }
-
-

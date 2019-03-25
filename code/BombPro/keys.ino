@@ -123,12 +123,12 @@ void setNewPass(){
   while(1){
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Enter New Pass");
+    lcd.print("ENTRE COM A SENHA");
     setPass();
 
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("Retype Pass");
+    lcd.print("NOVAMENTE");
 
     setCode();
 
@@ -136,7 +136,7 @@ void setNewPass(){
 
       lcd.clear();
       lcd.setCursor(0, 0);
-      lcd.print("Password Set OK!");
+      lcd.print("SENHA OK!");
       delay(2000); 
       break; 
     }
@@ -236,10 +236,3 @@ byte getRealNumber(){
     return 11;
   }
 }
-
-
-
-
-
-
-

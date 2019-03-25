@@ -60,9 +60,9 @@ void domination(){
     else if (!showGameTime){
 
       lcd.setCursor(2,0);
-      if(team == 0)lcd.print("NEUTRAL ZONE");
-      if(team == 1)lcd.print(" GREEN ZONE");
-      if(team == 2)lcd.print("  RED ZONE");
+      if(team == 0)lcd.print("ZONA NEUTRA");
+      if(team == 1)lcd.print("ZONA VERDE");
+      if(team == 2)lcd.print("ZONA VERMELHA");
 
       if(team>0){
         lcd.setCursor(3,1);
@@ -82,7 +82,7 @@ void domination(){
     while((defuseando || cancelando) && team > 0)
     {
       cls();
-      if(team>0)lcd.print("NEUTRALIZING...");
+      if(team>0)lcd.print("NEUTRALIZANDO..");
       lcd.setCursor(0,1);
       unsigned int percent=0;
       unsigned long xTime=millis(); //start disabling time
@@ -136,7 +136,7 @@ void domination(){
     while(defuseando && team == 0 )
     {
       cls();
-      if(team==0)lcd.print(" CAPTURING ZONE");
+      if(team==0)lcd.print("ZONA CAPTURADA");
       lcd.setCursor(0,1);
       unsigned int percent=0;
       unsigned long xTime=millis(); //start disabling time
@@ -182,7 +182,7 @@ void domination(){
     while(cancelando && team == 0 )
     {
       cls();
-      if(team==0)lcd.print(" CAPTURING ZONE");
+      if(team==0)lcd.print("CAPTURANDO ZONA");
       lcd.setCursor(0,1);
       unsigned int percent=0;
       unsigned long xTime=millis(); //start disabling time
@@ -246,12 +246,12 @@ void gameOver(){
     //check who team win the base
     if(greenTime>redTime){
       //greenteam wins
-      lcd.print(" GREEN TEAM WIN");
+      lcd.print("TIME VERDE WIN");
       digitalWrite(GREENLED, HIGH);
     }
     else{
       //redteam wins 
-      lcd.print("  RED TEAM WIN");
+      lcd.print("TIME VERMELHO WIN");
       digitalWrite(REDLED, HIGH);
     }
     delay(3000);
@@ -261,7 +261,7 @@ void gameOver(){
       break;
     }
     cls();
-    lcd.print("Red Time:");
+    lcd.print("TEMPO VERMELHO:");
     lcd.setCursor(5,1);
     printTimeDom(redTime,false);
     delay(3000);
@@ -271,7 +271,7 @@ void gameOver(){
       break;
     }
     cls();
-    lcd.print("Green Time:");
+    lcd.print("TEMPO VERDE:");
     lcd.setCursor(5,1);
     printTimeDom(greenTime,false);
     delay(3000);
@@ -283,9 +283,9 @@ void gameOver(){
   }
   cls();
   delay(100);
-  lcd.print("Play Again?");
+  lcd.print("JOGAR NOVAMENTE?");
   lcd.setCursor(0,1);
-  lcd.print("A : Yes B : No");
+  lcd.print("A : SIM B : NAO");
   while(1)
   {
     var = keypad.waitForKey();
@@ -302,4 +302,3 @@ void gameOver(){
     }  
   } 
 }
-

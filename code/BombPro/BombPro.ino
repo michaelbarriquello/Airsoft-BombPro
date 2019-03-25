@@ -105,11 +105,11 @@ void setup(){
   Serial.begin(9600);
   lcd.init();                      // initialize the lcd 
   lcd.backlight();
-  lcd.setCursor(3,0);
+  lcd.setCursor(6,0);
   tone(tonepin,2400,30);
-  lcd.print("IGNIS ONE");// you can add your team name or someting cool
+  lcd.print("GTAM");// you can add your team name or someting cool
   lcd.setCursor(0,1);
-  lcd.print(" AIRSOFT SYSTEM");// you can add your team name or someting cool
+  lcd.print(" AIRSOFT 1.0");// you can add your team name or someting cool
   keypad.setHoldTime(50);
   keypad.setDebounceTime(50);
   keypad.addEventListener(keypadEvent);
@@ -237,19 +237,19 @@ void disarmedSplash(){
   digitalWrite(GREENLED, LOW);
   if(sdStatus || saStatus){
     lcd.clear();
-    lcd.setCursor(2,0);
-    lcd.print("BOMB DISARMED");
-    lcd.setCursor(3,1);
-    lcd.print("GOODS WIN");
+    lcd.setCursor(1,0);
+    lcd.print("BOMBA DESARMADA");
+    lcd.setCursor(1,1);
+    lcd.print("DEFENSORES WIN");
     digitalWrite(GREENLED, HIGH);  
     delay(5000);
     digitalWrite(GREENLED, LOW); 
   }
   //end code
   lcd.clear();
-  lcd.print("Play Again?");
+  lcd.print("JOGAR NOVAMENTE?");
   lcd.setCursor(0,1);
-  lcd.print("A : Yes B : No");
+  lcd.print("A : SIM B : NAO");
   digitalWrite(REDLED, LOW);  
   digitalWrite(GREENLED, LOW); 
   while(1)
@@ -284,9 +284,9 @@ void explodeSplash(){
   delay(100);
   endGame = false;
   lcd.setCursor(1,0);
-  lcd.print("TERRORISTS WIN");
-  lcd.setCursor(4,1);
-  lcd.print("GAME OVER");
+  lcd.print("TERRORISTAS WIN");
+  lcd.setCursor(2,1);
+  lcd.print("FIM DE JOGO");
   for(int i = 200; i>0; i--)// this is the ultra hi definition explosion sound xD
   {
     tone(tonepin,i);
@@ -300,9 +300,9 @@ void explodeSplash(){
   cls();
 
   //end code
-  lcd.print("Play Again?");
+  lcd.print("JOGAR NOVAMENTE?");
   lcd.setCursor(0,1);
-  lcd.print("A : Yes B : No");
+  lcd.print("A : SIM B : NAO");
   while(1)
   {
     var = keypad.waitForKey();

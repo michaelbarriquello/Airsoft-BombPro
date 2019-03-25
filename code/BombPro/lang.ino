@@ -22,9 +22,9 @@
                    
 
 // PT-BR
-  char* menu1[]={"Procurar&Destruir","Sabotar","Dominacao"      };
-  char* menu2[]={"Config Jogo","Config Som", "Mosfet Test", "Auto Teste"      };   
-  char* GAME_TIME="Tempo Jogo:";
+  char* menu1[]={" Proc. E Dest. ","Sabotar","Dominacao"};
+  char* menu2[]={"Config Jogo","Config Som", "Mosfet Test", "Auto Teste"};
+  char* GAME_TIME="TEMPO DO JOGO:";
   char* BOMB_TIME="Tempo Bomba:";
   char* ZERO_MINUTES="00 minutos";
   char* ARM_TIME="Tempo p/ Armar:";
@@ -33,14 +33,14 @@
   char* YES_OR_NOT="A : Sim B : Nao";
   char* ENABLE_MOSFET="Ativar Mosfet?";
   char* ENABLE_CODE="Enable Code Arm?";
-  char* GAME_TIME_TOP="Tempo de jogo";
+  char* GAME_TIME_TOP="Tempo de jogo:";
   char* ARMING_BOMB = "ARMING BOMB";
   char* ENTER_CODE = "Enter Code";
   char* CODE_ERROR = "Code Error!";
   char* BOMB_ARMED = "BOMBA ARMADA";
   char* DETONATION_IN = "DETONACAO EM";
   char* DISARMING = "DESARMANDO BOMBA" ;
-  char* DISARM = "DESARMADA";
+  char* DISARM = "DESARMANDO BOMBA";
   char* GAME_OVER = " FIM DE JOGO! ";
   char* DEFENDERS_WIN = "DEFENSORES WIN ";
                    

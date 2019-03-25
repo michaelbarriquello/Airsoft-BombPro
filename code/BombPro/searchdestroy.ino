@@ -27,7 +27,7 @@ void search(){
       digitalWrite(GREENLED, LOW);  
     }
 
-    lcd.setCursor(3,0);
+    lcd.setCursor(1,0);
     lcd.print(GAME_TIME_TOP);
     aTime=millis()- iTime;
     lcd.setCursor(3,1);
@@ -116,6 +116,7 @@ void destroy(){
   lcd.setCursor(3,0);
   lcd.print(BOMB_ARMED);
   delay(1000);
+  lcd.clear();
   int minutos=BOMBMINUTES-1;
   unsigned long iTime=millis();
   unsigned long aTime;
@@ -147,8 +148,8 @@ void destroy(){
     if(timeCalcVar >= 495 && timeCalcVar <= 510 && minutos-aTime/60000<4 && soundEnable)tone(tonepin,tonoActivada,largoTono);
     if(timeCalcVar >= 745 && timeCalcVar <= 760 && minutos-aTime/60000<2 && soundEnable)tone(tonepin,tonoActivada,largoTono);
     if( minutos-aTime/60000==0 && 59-((aTime/1000)%60) < 10)largoTono = 300;
-
-    lcd.setCursor(1,0);
+    
+    lcd.setCursor(2,0);
     lcd.print(DETONATION_IN);
     //Passed Time
 
@@ -258,4 +259,3 @@ void endSplash(){
   } 
 
 }
-
